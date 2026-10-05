@@ -41,7 +41,7 @@
    */
   document.querySelectorAll('#navmenu a').forEach(navmenu => {
     navmenu.addEventListener('click', () => {
-      if (document.querySelector('.mobile-nav-active') && !navmenu.classList.contains('toggle-dropdown')) {
+      if (document.querySelector('.mobile-nav-active') && !navmenu.classList.contains('toggle-dropdown') && navmenu.getAttribute('href') !== '#') {
         mobileNavToogle();
       }
     });
@@ -57,6 +57,19 @@
       this.parentNode.classList.toggle('active');
       this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
       e.stopImmediatePropagation();
+    });
+  });
+
+  /**
+   * Dropdown parents without a page of their own (href="#") open their submenu instead of navigating
+   */
+  document.querySelectorAll('.navmenu .dropdown > a[href="#"]').forEach(parentLink => {
+    parentLink.addEventListener('click', function(e) {
+      e.preventDefault();
+      if (document.querySelector('.mobile-nav-active')) {
+        this.classList.toggle('active');
+        this.nextElementSibling.classList.toggle('dropdown-active');
+      }
     });
   });
 

@@ -22,7 +22,7 @@
   --background-color: #f9fafb; /* Background color for the entire website, including individual sections */
   --default-color: #374151; /* Default color used for the majority of the text content across the entire website */
   --heading-color: #1f2533; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #d63f2a; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-color: #ff0000; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
@@ -30,11 +30,11 @@
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
   --nav-color: #374151;  /* The default color of the main navmenu links */
-  --nav-hover-color: #d63f2a; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-hover-color: #ff0000; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #374151; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #d63f2a; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-dropdown-hover-color: #ff0000; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -50,6 +50,11 @@
   --heading-color: #ffffff;
   --surface-color: #17325b;
   --contrast-color: #ffffff;
+}
+
+/* Base font size - Every font size on the website is set in rem, so changing this percentage scales all text up or down together. 100% equals the visitor's browser default (usually 16px) */
+:root {
+  font-size: 112.5%;
 }
 
 /* Smooth scroll */
@@ -163,7 +168,7 @@ h6 {
 }
 
 .header .logo i {
-  font-size: 22px;
+  font-size: 1.375rem;
   margin-right: 8px;
 }
 
@@ -173,7 +178,7 @@ h6 {
 }
 
 .header .logo h1 {
-  font-size: 22px;
+  font-size: 1.375rem;
   margin: 0;
   font-weight: 500;
   color: var(--heading-color);
@@ -186,7 +191,7 @@ h6 {
   gap: 8px;
   color: var(--contrast-color);
   background: var(--accent-color);
-  font-size: 14px;
+  font-size: 0.875rem;
   padding: 8px 20px;
   margin: 0 0 0 30px;
   border-radius: 6px;
@@ -260,7 +265,7 @@ h6 {
   .navmenu a:focus {
     color: var(--nav-color);
     padding: 18px 15px;
-    font-size: 14px;
+    font-size: 0.875rem;
     font-family: var(--nav-font);
     font-weight: 500;
     display: flex;
@@ -272,7 +277,7 @@ h6 {
 
   .navmenu a i,
   .navmenu a:focus i {
-    font-size: 12px;
+    font-size: 0.75rem;
     line-height: 0;
     margin-left: 5px;
     transition: 0.3s;
@@ -310,13 +315,13 @@ h6 {
 
   .navmenu .dropdown ul a {
     padding: 10px 20px;
-    font-size: 15px;
+    font-size: 0.9375rem;
     text-transform: none;
     color: var(--nav-dropdown-color);
   }
 
   .navmenu .dropdown ul a i {
-    font-size: 12px;
+    font-size: 0.75rem;
   }
 
   .navmenu .dropdown ul a:hover,
@@ -325,7 +330,8 @@ h6 {
     color: var(--nav-dropdown-hover-color);
   }
 
-  .navmenu .dropdown:hover>ul {
+  .navmenu .dropdown:hover>ul,
+  .navmenu .dropdown:focus-within>ul {
     opacity: 1;
     top: 100%;
     visibility: visible;
@@ -349,7 +355,7 @@ h6 {
 @media (max-width: 1199px) {
   .mobile-nav-toggle {
     color: var(--nav-color);
-    font-size: 28px;
+    font-size: 1.75rem;
     line-height: 0;
     margin-right: 10px;
     cursor: pointer;
@@ -381,7 +387,7 @@ h6 {
     color: var(--nav-dropdown-color);
     padding: 10px 20px;
     font-family: var(--nav-font);
-    font-size: 17px;
+    font-size: 1.0625rem;
     font-weight: 500;
     display: flex;
     align-items: center;
@@ -392,7 +398,7 @@ h6 {
 
   .navmenu a i,
   .navmenu a:focus i {
-    font-size: 12px;
+    font-size: 0.75rem;
     line-height: 0;
     margin-left: 5px;
     width: 30px;
@@ -452,7 +458,7 @@ h6 {
   .mobile-nav-active .mobile-nav-toggle {
     color: #fff;
     position: absolute;
-    font-size: 32px;
+    font-size: 2rem;
     top: 15px;
     right: 15px;
     margin-right: 0;
@@ -478,7 +484,7 @@ h6 {
 .footer {
   color: var(--default-color);
   background-color: var(--background-color);
-  font-size: 14px;
+  font-size: 0.875rem;
   position: relative;
 }
 
@@ -500,18 +506,18 @@ h6 {
 .footer .footer-about .logo span {
   color: var(--heading-color);
   font-family: var(--heading-font);
-  font-size: 26px;
+  font-size: 1.625rem;
   font-weight: 700;
   letter-spacing: 1px;
 }
 
 .footer .footer-about p {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-family: var(--heading-font);
 }
 
 .footer h4 {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   position: relative;
   padding-bottom: 12px;
@@ -541,7 +547,7 @@ h6 {
 
 .footer .footer-links ul i {
   padding-right: 2px;
-  font-size: 12px;
+  font-size: 0.75rem;
   line-height: 0;
 }
 
@@ -579,11 +585,11 @@ h6 {
 
 .footer .credits {
   margin-top: 5px;
-  font-size: 13px;
+  font-size: 0.8125rem;
 }
 
 .footer .social-links a {
-  font-size: 18px;
+  font-size: 1.125rem;
   display: inline-block;
   background: color-mix(in srgb, var(--default-color), transparent 92%);
   color: var(--accent-color);
@@ -621,7 +627,7 @@ h6 {
 }
 
 .scroll-top i {
-  font-size: 24px;
+  font-size: 1.5rem;
   color: var(--contrast-color);
   line-height: 0;
 }
@@ -750,7 +756,7 @@ section,
 }
 
 .section-title h2 {
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: 700;
   margin-bottom: 20px;
   padding-bottom: 20px;
@@ -800,7 +806,7 @@ section,
   display: block;
   line-height: 1.5;
   font-family: var(--nav-font);
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 500;
   letter-spacing: 0.25em;
   text-transform: uppercase;
@@ -810,13 +816,13 @@ section,
 
 @media (max-width: 576px) {
   .hero .hero-content .hero-eyebrow {
-    font-size: 12px;
+    font-size: 0.75rem;
     letter-spacing: 0.18em;
   }
 }
 
 .hero .hero-content .hero-headline {
-  font-size: clamp(36px, 4.6vw, 60px);
+  font-size: clamp(2.25rem, 4.6vw, 3.75rem);
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -0.02em;
@@ -830,7 +836,7 @@ section,
 }
 
 .hero .hero-content .hero-subtext {
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 1.7;
   color: color-mix(in srgb, var(--default-color) 85%, transparent);
   margin-bottom: 32px;
@@ -839,7 +845,7 @@ section,
 
 @media (max-width: 576px) {
   .hero .hero-content .hero-subtext {
-    font-size: 16px;
+    font-size: 1rem;
   }
 }
 
@@ -857,7 +863,7 @@ section,
   align-items: center;
   justify-content: center;
   gap: 10px;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 500;
   border-radius: 8px;
   transition: all 0.2s ease;
@@ -937,18 +943,18 @@ section,
   border-radius: 50%;
   background-color: color-mix(in srgb, var(--accent-color) 10%, var(--surface-color));
   color: var(--accent-color);
-  font-size: 22px;
+  font-size: 1.375rem;
 }
 
 .hero .hero-content .feature-row .feature-label {
-  font-size: 15px;
+  font-size: 0.9375rem;
   line-height: 1.4;
   color: color-mix(in srgb, var(--default-color) 85%, transparent);
 }
 
 @media (max-width: 576px) {
   .hero .hero-content .feature-row .feature-label {
-    font-size: 13px;
+    font-size: 0.8125rem;
   }
 }
 
@@ -967,13 +973,8 @@ section,
 }
 
 .hero .hero-media .swiper-wrapper,
-.hero .hero-media .swiper-slide,
-.hero .hero-media picture {
+.hero .hero-media .swiper-slide {
   height: 100%;
-}
-
-.hero .hero-media picture {
-  display: block;
 }
 
 .hero .hero-media img {
@@ -997,7 +998,7 @@ section,
   gap: 8px;
   padding: 4px 12px;
   margin-bottom: 16px;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -1008,11 +1009,11 @@ section,
 }
 
 .home-about .eyebrow-badge i {
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .home-about .display-heading {
-  font-size: 48px;
+  font-size: 3rem;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.01em;
@@ -1022,18 +1023,18 @@ section,
 
 @media (max-width: 992px) {
   .home-about .display-heading {
-    font-size: 36px;
+    font-size: 2.25rem;
   }
 }
 
 @media (max-width: 576px) {
   .home-about .display-heading {
-    font-size: 30px;
+    font-size: 1.875rem;
   }
 }
 
 .home-about .intro-copy {
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.75;
   color: color-mix(in srgb, var(--default-color) 70%, transparent);
   margin: 0;
@@ -1077,7 +1078,7 @@ section,
 }
 
 .home-about .stats-strip .stat-cell .stat-value {
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.01em;
@@ -1086,7 +1087,7 @@ section,
 }
 
 .home-about .stats-strip .stat-cell .stat-label {
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -1138,7 +1139,7 @@ section,
   align-items: center;
   gap: 8px;
   padding: 4px 12px;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
   border-radius: 12px;
   background: var(--surface-color);
@@ -1149,7 +1150,7 @@ section,
 
 .home-about .media-stack .media-card .media-tag i {
   color: var(--accent-color);
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .home-about .media-stack .media-row {
@@ -1201,7 +1202,7 @@ section,
 
 .home-about .feature-card.primary-card .card-head .icon-square i {
   color: var(--accent-color);
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .home-about .feature-card.primary-card .card-head .head-text {
@@ -1210,7 +1211,7 @@ section,
 
 .home-about .feature-card.primary-card .card-head .head-text .meta-label {
   display: block;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -1219,7 +1220,7 @@ section,
 }
 
 .home-about .feature-card.primary-card .card-head .head-text .card-title {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.3;
   letter-spacing: -0.01em;
@@ -1228,7 +1229,7 @@ section,
 }
 
 .home-about .feature-card.primary-card .card-description {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.75;
   color: color-mix(in srgb, var(--default-color) 70%, transparent);
   margin: 0;
@@ -1243,7 +1244,7 @@ section,
 }
 
 .home-about .feature-card.compact i {
-  font-size: 22px;
+  font-size: 1.375rem;
   color: var(--accent-color);
   width: 40px;
   height: 40px;
@@ -1255,7 +1256,7 @@ section,
 }
 
 .home-about .feature-card.compact .compact-text h4 {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--heading-color);
   margin: 0 0 4px 0;
@@ -1263,7 +1264,7 @@ section,
 }
 
 .home-about .feature-card.compact .compact-text p {
-  font-size: 13px;
+  font-size: 0.8125rem;
   line-height: 1.6;
   color: color-mix(in srgb, var(--default-color) 65%, transparent);
   margin: 0;
@@ -1288,7 +1289,7 @@ section,
   gap: 8px;
   height: 40px;
   padding: 0 20px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   border-radius: 6px;
   text-decoration: none;
@@ -1297,7 +1298,7 @@ section,
 
 .home-about .action-row .btn-primary-shadcn i,
 .home-about .action-row .btn-ghost-shadcn i {
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .home-about .action-row .btn-primary-shadcn:focus-visible,
@@ -1344,7 +1345,7 @@ section,
   }
 
   .home-about .feature-card.primary-card .card-head .head-text .card-title {
-    font-size: 20px;
+    font-size: 1.25rem;
   }
 
   .home-about .stats-strip .stat-cell {
@@ -1352,7 +1353,7 @@ section,
   }
 
   .home-about .stats-strip .stat-cell .stat-value {
-    font-size: 26px;
+    font-size: 1.625rem;
   }
 }
 
@@ -1376,7 +1377,7 @@ section,
 
 .featured-departments .meta-label {
   display: inline-block;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -1388,7 +1389,7 @@ section,
   align-items: center;
   gap: 6px;
   padding: 4px 10px;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
   border-radius: 999px;
   background: color-mix(in srgb, var(--accent-color) 10%, transparent);
@@ -1417,7 +1418,7 @@ section,
   gap: 8px;
   height: 40px;
   padding: 0 20px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   border-radius: 8px;
   border: 1px solid transparent;
@@ -1491,7 +1492,7 @@ section,
 }
 
 .featured-departments .spotlight-panel .spotlight-title {
-  font-size: 36px;
+  font-size: 2.25rem;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.01em;
@@ -1501,12 +1502,12 @@ section,
 
 @media (max-width: 768px) {
   .featured-departments .spotlight-panel .spotlight-title {
-    font-size: 28px;
+    font-size: 1.75rem;
   }
 }
 
 .featured-departments .spotlight-panel .spotlight-text {
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.7;
   color: var(--sc-muted);
   margin-bottom: 32px;
@@ -1536,20 +1537,20 @@ section,
   border-radius: 6px;
   background: color-mix(in srgb, var(--accent-color) 12%, transparent);
   color: var(--accent-color);
-  font-size: 14px;
+  font-size: 0.875rem;
   margin-top: 2px;
 }
 
 .featured-departments .spotlight-panel .checklist li .check-title {
   display: block;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   color: var(--heading-color);
 }
 
 .featured-departments .spotlight-panel .checklist li .check-sub {
   display: block;
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: var(--sc-muted);
   margin-top: 2px;
 }
@@ -1573,6 +1574,12 @@ section,
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+@media (min-width: 992px) {
+  .featured-departments .spotlight-panel .spotlight-visual img {
+    object-position: right center;
+  }
 }
 
 @media (max-width: 992px) {
@@ -1602,7 +1609,7 @@ section,
 
 .featured-departments .spotlight-panel .overlay-stat .stat-value {
   display: block;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 700;
   color: var(--heading-color);
   line-height: 1.2;
@@ -1610,7 +1617,7 @@ section,
 
 .featured-departments .spotlight-panel .overlay-stat .stat-caption {
   display: block;
-  font-size: 11px;
+  font-size: 0.6875rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--sc-muted);
@@ -1633,7 +1640,7 @@ section,
 }
 
 .featured-departments .section-heading .heading-title {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--heading-color);
@@ -1684,7 +1691,7 @@ section,
   border-radius: 8px;
   background: color-mix(in srgb, var(--accent-color) 10%, transparent);
   color: var(--accent-color);
-  font-size: 20px;
+  font-size: 1.25rem;
   transition: all 0.2s ease;
 }
 
@@ -1694,7 +1701,7 @@ section,
 }
 
 .featured-departments .shadcn-card .card-heading {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--heading-color);
@@ -1702,7 +1709,7 @@ section,
 }
 
 .featured-departments .shadcn-card .card-text {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.6;
   color: var(--sc-muted);
   margin: 0;
@@ -1722,14 +1729,14 @@ section,
 }
 
 .featured-departments .shadcn-card .foot-stat .value {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--heading-color);
   line-height: 1.1;
 }
 
 .featured-departments .shadcn-card .foot-stat .caption {
-  font-size: 11px;
+  font-size: 0.6875rem;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   color: var(--sc-muted);
@@ -1747,7 +1754,7 @@ section,
   border: 1px solid var(--sc-border);
   color: var(--heading-color);
   transition: all 0.2s ease;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .featured-departments .banner-cta {
@@ -1780,7 +1787,7 @@ section,
   border-radius: 10px;
   background: color-mix(in srgb, var(--accent-color) 12%, transparent);
   color: var(--accent-color);
-  font-size: 24px;
+  font-size: 1.5rem;
   border: 1px solid color-mix(in srgb, var(--accent-color) 25%, transparent);
 }
 
@@ -1789,7 +1796,7 @@ section,
 }
 
 .featured-departments .banner-cta .banner-title {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--heading-color);
@@ -1797,7 +1804,7 @@ section,
 }
 
 .featured-departments .banner-cta .banner-sub {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.6;
   color: var(--sc-muted);
   margin: 0;
@@ -1884,7 +1891,7 @@ section,
   align-items: center;
   gap: 6px;
   padding: 4px 10px;
-  font-size: 11px;
+  font-size: 0.6875rem;
   font-weight: 500;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -1895,7 +1902,7 @@ section,
 }
 
 .featured-services .card-media .badge-label i {
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 @media (max-width: 576px) {
@@ -1914,7 +1921,7 @@ section,
 }
 
 .featured-services .card-body p {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.6;
   color: color-mix(in srgb, var(--default-color) 70%, transparent);
   margin-bottom: 16px;
@@ -1930,7 +1937,7 @@ section,
 }
 
 .featured-services .card-head h3 {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   line-height: 1.3;
@@ -1940,7 +1947,7 @@ section,
 
 .featured-services .card-head .meta-tag {
   flex-shrink: 0;
-  font-size: 11px;
+  font-size: 0.6875rem;
   font-weight: 500;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -1960,7 +1967,7 @@ section,
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   color: var(--heading-color);
   text-decoration: none;
@@ -1968,7 +1975,7 @@ section,
 }
 
 .featured-services .link-action i {
-  font-size: 14px;
+  font-size: 0.875rem;
   transition: transform 0.2s ease;
 }
 
@@ -1998,7 +2005,7 @@ section,
   }
 
   .featured-services .card-head h3 {
-    font-size: 16px;
+    font-size: 1rem;
   }
 }
 
@@ -2021,7 +2028,7 @@ section,
 
 .find-a-doctor .directory-toolbar .toolbar-intro .eyebrow {
   display: inline-block;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -2034,7 +2041,7 @@ section,
 }
 
 .find-a-doctor .directory-toolbar .toolbar-intro h2 {
-  font-size: 28px;
+  font-size: 1.75rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   line-height: 1.3;
@@ -2043,7 +2050,7 @@ section,
 }
 
 .find-a-doctor .directory-toolbar .toolbar-intro p {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.6;
   color: color-mix(in srgb, var(--default-color) 70%, transparent);
   margin: 0;
@@ -2051,7 +2058,7 @@ section,
 
 .find-a-doctor .directory-toolbar .filter-form .field-label {
   display: block;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.03em;
   color: var(--heading-color);
@@ -2067,7 +2074,7 @@ section,
   top: 50%;
   left: 12px;
   transform: translateY(-50%);
-  font-size: 14px;
+  font-size: 0.875rem;
   color: color-mix(in srgb, var(--default-color) 55%, transparent);
   pointer-events: none;
 }
@@ -2080,7 +2087,7 @@ section,
   border-radius: 6px;
   background: var(--background-color);
   color: var(--default-color);
-  font-size: 14px;
+  font-size: 0.875rem;
   transition: all 0.2s ease;
 }
 
@@ -2106,14 +2113,14 @@ section,
   color: var(--contrast-color);
   border: none;
   border-radius: 6px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   padding: 0 16px;
   transition: background 0.2s ease, box-shadow 0.2s ease;
 }
 
 .find-a-doctor .directory-toolbar .filter-form .btn-apply i {
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .find-a-doctor .directory-toolbar .filter-form .btn-apply:hover {
@@ -2143,13 +2150,13 @@ section,
 }
 
 .find-a-doctor .results-meta .results-count .count-number {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 600;
   color: var(--heading-color);
 }
 
 .find-a-doctor .results-meta .results-count .count-label {
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: color-mix(in srgb, var(--default-color) 65%, transparent);
 }
 
@@ -2160,7 +2167,7 @@ section,
 }
 
 .find-a-doctor .results-meta .sort-tags .tag {
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
   padding: 6px 12px;
   border-radius: 6px;
@@ -2264,7 +2271,7 @@ section,
 
 .find-a-doctor .clinician-row .row-head .chip {
   display: inline-block;
-  font-size: 11px;
+  font-size: 0.6875rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -2280,7 +2287,7 @@ section,
 }
 
 .find-a-doctor .clinician-row .row-head h3 {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   margin-bottom: 2px;
@@ -2288,7 +2295,7 @@ section,
 }
 
 .find-a-doctor .clinician-row .row-head .role {
-  font-size: 13px;
+  font-size: 0.8125rem;
   margin: 0;
   color: color-mix(in srgb, var(--default-color) 65%, transparent);
 }
@@ -2305,13 +2312,13 @@ section,
 }
 
 .find-a-doctor .clinician-row .row-head .score-block .stars i {
-  font-size: 11px;
+  font-size: 0.6875rem;
   color: #f59e0b;
 }
 
 .find-a-doctor .clinician-row .row-head .score-block .value {
   display: block;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   color: var(--heading-color);
   line-height: 1;
@@ -2319,7 +2326,7 @@ section,
 
 .find-a-doctor .clinician-row .row-head .score-block .reviews {
   display: block;
-  font-size: 11px;
+  font-size: 0.6875rem;
   color: color-mix(in srgb, var(--default-color) 55%, transparent);
   margin-top: 2px;
 }
@@ -2337,7 +2344,7 @@ section,
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
   padding: 4px 10px;
   border-radius: 6px;
@@ -2347,7 +2354,7 @@ section,
 }
 
 .find-a-doctor .clinician-row .meta-row li i {
-  font-size: 12px;
+  font-size: 0.75rem;
   color: var(--accent-color);
 }
 
@@ -2366,7 +2373,7 @@ section,
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 500;
   border-radius: 6px;
   text-decoration: none;
@@ -2409,7 +2416,7 @@ section,
 }
 
 .find-a-doctor .directory-footer .footer-note {
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: color-mix(in srgb, var(--default-color) 65%, transparent);
 }
 
@@ -2417,7 +2424,7 @@ section,
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   color: var(--accent-color);
   text-decoration: none;
@@ -2428,7 +2435,7 @@ section,
 }
 
 .find-a-doctor .directory-footer .btn-link i {
-  font-size: 13px;
+  font-size: 0.8125rem;
   transition: transform 0.2s ease;
 }
 
@@ -2448,7 +2455,7 @@ section,
   }
 
   .find-a-doctor .directory-toolbar .toolbar-intro h2 {
-    font-size: 24px;
+    font-size: 1.5rem;
   }
 }
 
@@ -2462,7 +2469,7 @@ section,
   }
 
   .find-a-doctor .directory-toolbar .toolbar-intro h2 {
-    font-size: 22px;
+    font-size: 1.375rem;
   }
 
   .find-a-doctor .results-meta {
@@ -2541,7 +2548,7 @@ section,
   background: color-mix(in srgb, var(--accent-color) 10%, transparent);
   color: var(--accent-color);
   border: 1px solid color-mix(in srgb, var(--accent-color) 30%, transparent);
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -2549,11 +2556,11 @@ section,
 }
 
 .call-to-action .hero-panel .badge-pill i {
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .call-to-action .hero-panel h2 {
-  font-size: 48px;
+  font-size: 3rem;
   font-weight: 700;
   letter-spacing: -0.01em;
   line-height: 1.2;
@@ -2563,18 +2570,18 @@ section,
 
 @media (max-width: 992px) {
   .call-to-action .hero-panel h2 {
-    font-size: 36px;
+    font-size: 2.25rem;
   }
 }
 
 @media (max-width: 576px) {
   .call-to-action .hero-panel h2 {
-    font-size: 28px;
+    font-size: 1.75rem;
   }
 }
 
 .call-to-action .hero-panel .lead-text {
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.6;
   color: color-mix(in srgb, var(--default-color) 75%, transparent);
   margin-bottom: 32px;
@@ -2600,14 +2607,14 @@ section,
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 500;
   color: color-mix(in srgb, var(--default-color) 70%, transparent);
 }
 
 .call-to-action .hero-panel .trust-row .trust-item i {
   color: var(--accent-color);
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .call-to-action .hero-panel .panel-visual {
@@ -2643,7 +2650,7 @@ section,
   background: var(--accent-color);
   color: var(--contrast-color);
   border-radius: 6px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   text-decoration: none;
   border: 1px solid var(--accent-color);
@@ -2661,7 +2668,7 @@ section,
 }
 
 .call-to-action .btn-primary-shad i {
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .call-to-action .btn-ghost-shad {
@@ -2673,7 +2680,7 @@ section,
   background: transparent;
   color: var(--heading-color);
   border-radius: 6px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   text-decoration: none;
   transition: all 0.2s ease;
@@ -2701,7 +2708,7 @@ section,
   background: transparent;
   color: var(--contrast-color);
   border-radius: 6px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   text-decoration: none;
   border: 1px solid color-mix(in srgb, var(--contrast-color) 50%, transparent);
@@ -2747,7 +2754,7 @@ section,
 }
 
 .call-to-action .metrics-strip .metric-label {
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -2756,7 +2763,7 @@ section,
 }
 
 .call-to-action .metrics-strip .metric-value {
-  font-size: 40px;
+  font-size: 2.5rem;
   font-weight: 700;
   letter-spacing: -0.01em;
   color: var(--heading-color);
@@ -2769,7 +2776,7 @@ section,
 }
 
 .call-to-action .metrics-strip .metric-meta {
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: color-mix(in srgb, var(--default-color) 65%, transparent);
 }
 
@@ -2784,7 +2791,7 @@ section,
 
 .call-to-action .specialties-section .specialties-header .section-eyebrow {
   display: inline-block;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -2793,7 +2800,7 @@ section,
 }
 
 .call-to-action .specialties-section .specialties-header h3 {
-  font-size: 28px;
+  font-size: 1.75rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--heading-color);
@@ -2836,14 +2843,14 @@ section,
 }
 
 .call-to-action .specialties-section .shad-card .card-icon i {
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .call-to-action .specialties-section .shad-card .card-tag {
   display: inline-flex;
   align-items: center;
   padding: 2px 10px;
-  font-size: 11px;
+  font-size: 0.6875rem;
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -2858,7 +2865,7 @@ section,
 }
 
 .call-to-action .specialties-section .shad-card .card-body-shad h4 {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--heading-color);
@@ -2866,7 +2873,7 @@ section,
 }
 
 .call-to-action .specialties-section .shad-card .card-body-shad p {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.6;
   color: color-mix(in srgb, var(--default-color) 70%, transparent);
   margin: 0;
@@ -2882,7 +2889,7 @@ section,
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 500;
   color: var(--accent-color);
   text-decoration: none;
@@ -2890,7 +2897,7 @@ section,
 }
 
 .call-to-action .specialties-section .shad-card .card-link i {
-  font-size: 14px;
+  font-size: 0.875rem;
   transition: transform 0.2s ease;
 }
 
@@ -2903,7 +2910,7 @@ section,
 }
 
 .call-to-action .alert-strip {
-  background: var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color) 85%, #000);
   border-radius: 12px;
   padding: 40px;
   color: var(--contrast-color);
@@ -2949,22 +2956,22 @@ section,
 }
 
 .call-to-action .alert-strip .alert-icon i {
-  font-size: 22px;
+  font-size: 1.375rem;
   color: var(--contrast-color);
 }
 
 .call-to-action .alert-strip .alert-eyebrow {
   display: inline-block;
-  font-size: 11px;
+  font-size: 0.6875rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: color-mix(in srgb, var(--contrast-color) 80%, transparent);
+  color: color-mix(in srgb, var(--contrast-color) 90%, transparent);
   margin-bottom: 6px;
 }
 
 .call-to-action .alert-strip .alert-text h5 {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--contrast-color);
@@ -2972,9 +2979,9 @@ section,
 }
 
 .call-to-action .alert-strip .alert-text p {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.6;
-  color: color-mix(in srgb, var(--contrast-color) 85%, transparent);
+  color: color-mix(in srgb, var(--contrast-color) 90%, transparent);
   margin: 0;
   max-width: 480px;
 }
@@ -3018,7 +3025,7 @@ section,
 
 .about .eyebrow-label {
   display: inline-block;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -3030,7 +3037,7 @@ section,
   display: inline-flex;
   align-items: center;
   padding: 4px 12px;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
   border-radius: 999px;
   background: color-mix(in srgb, var(--accent-color) 10%, transparent);
@@ -3040,7 +3047,7 @@ section,
 }
 
 .about .block-description {
-  font-size: 15px;
+  font-size: 0.9375rem;
   line-height: 1.7;
   color: color-mix(in srgb, var(--default-color) 65%, transparent);
   margin: 0;
@@ -3053,7 +3060,7 @@ section,
 }
 
 .about .intro-block h2 {
-  font-size: 44px;
+  font-size: 2.75rem;
   font-weight: 700;
   line-height: 1.15;
   letter-spacing: -0.01em;
@@ -3061,7 +3068,7 @@ section,
 }
 
 .about .intro-block .intro-paragraph {
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.7;
   color: color-mix(in srgb, var(--default-color) 70%, transparent);
   margin: 0;
@@ -3069,7 +3076,7 @@ section,
 
 @media (max-width: 768px) {
   .about .intro-block h2 {
-    font-size: 32px;
+    font-size: 2rem;
   }
 }
 
@@ -3105,7 +3112,7 @@ section,
 }
 
 .about .feature-board .media-card .media-overlay h4 {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   margin: 8px 0 0;
   color: var(--heading-color);
@@ -3148,7 +3155,7 @@ section,
 }
 
 .about .feature-board .info-card .info-card-header h3 {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.25;
   letter-spacing: -0.01em;
@@ -3156,7 +3163,7 @@ section,
 }
 
 .about .feature-board .info-card .info-card-header p {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.65;
   color: color-mix(in srgb, var(--default-color) 65%, transparent);
   margin: 0;
@@ -3186,7 +3193,7 @@ section,
 
 .about .feature-board .metric-list .metric-value {
   min-width: 96px;
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: 700;
   line-height: 1;
   color: var(--heading-color);
@@ -3196,7 +3203,7 @@ section,
 }
 
 .about .feature-board .metric-list .metric-value .unit {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 600;
   color: var(--accent-color);
   margin-left: 2px;
@@ -3207,14 +3214,14 @@ section,
 }
 
 .about .feature-board .metric-list .metric-detail h5 {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   margin: 0 0 4px;
   color: var(--heading-color);
 }
 
 .about .feature-board .metric-list .metric-detail p {
-  font-size: 12px;
+  font-size: 0.75rem;
   margin: 0;
   color: color-mix(in srgb, var(--default-color) 60%, transparent);
   line-height: 1.5;
@@ -3261,11 +3268,11 @@ section,
 }
 
 .about .pillar-block .pillar-card .pillar-icon i {
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .about .pillar-block .pillar-card h4 {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 600;
   line-height: 1.35;
   margin: 0 0 8px;
@@ -3273,7 +3280,7 @@ section,
 }
 
 .about .pillar-block .pillar-card p {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.7;
   margin: 0;
   color: color-mix(in srgb, var(--default-color) 65%, transparent);
@@ -3288,7 +3295,7 @@ section,
 }
 
 .about .specialty-block .specialty-heading h3 {
-  font-size: 28px;
+  font-size: 1.75rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   margin: 0;
@@ -3308,7 +3315,7 @@ section,
 }
 
 .about .specialty-block .specialty-card i {
-  font-size: 20px;
+  font-size: 1.25rem;
   color: var(--accent-color);
   width: 36px;
   height: 36px;
@@ -3321,7 +3328,7 @@ section,
 }
 
 .about .specialty-block .specialty-card span {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   color: var(--heading-color);
 }
@@ -3340,7 +3347,7 @@ section,
 }
 
 .about .trust-block h4 {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 600;
   line-height: 1.35;
   margin: 0;
@@ -3432,7 +3439,7 @@ section,
   }
 
   .about .feature-board .metric-list .metric-value {
-    font-size: 26px;
+    font-size: 1.625rem;
     min-width: 80px;
   }
 
@@ -3501,7 +3508,7 @@ section,
   display: inline-flex;
   align-items: center;
   padding: 4px 10px;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.05em;
   border-radius: 12px;
@@ -3540,11 +3547,11 @@ section,
 }
 
 .departments .dept-icon-box i {
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .departments .dept-card-title {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.01em;
@@ -3554,7 +3561,7 @@ section,
 
 .departments .dept-card-meta {
   margin: 0;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -3562,7 +3569,7 @@ section,
 }
 
 .departments .dept-card-desc {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.6;
   color: color-mix(in srgb, var(--default-color) 75%, transparent);
   margin: 0 0 16px;
@@ -3581,13 +3588,13 @@ section,
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--heading-color);
   font-weight: 500;
 }
 
 .departments .dept-feature-list li i {
-  font-size: 11px;
+  font-size: 0.6875rem;
   width: 18px;
   height: 18px;
   display: inline-flex;
@@ -3609,7 +3616,7 @@ section,
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   color: var(--heading-color);
   text-decoration: none;
@@ -3623,7 +3630,7 @@ section,
 }
 
 .departments .dept-link-btn i {
-  font-size: 12px;
+  font-size: 0.75rem;
   transition: transform 0.2s ease;
 }
 
@@ -3645,7 +3652,7 @@ section,
   }
 
   .departments .dept-card-title {
-    font-size: 18px;
+    font-size: 1.125rem;
   }
 }
 
@@ -3657,7 +3664,7 @@ section,
   align-items: center;
   gap: 6px;
   padding: 4px 10px;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.02em;
   border-radius: 999px;
@@ -3667,12 +3674,12 @@ section,
 }
 
 .department-details .badge i {
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 .department-details .eyebrow {
   display: inline-block;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -3705,7 +3712,7 @@ section,
   align-items: center;
   gap: 8px;
   padding: 4px 12px;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
   border-radius: 999px;
   border: 1px solid color-mix(in srgb, var(--default-color) 12%, transparent);
@@ -3721,7 +3728,7 @@ section,
 }
 
 .department-details .department-card .department-title {
-  font-size: 48px;
+  font-size: 3rem;
   font-weight: 700;
   line-height: 1.2;
   letter-spacing: -0.02em;
@@ -3730,7 +3737,7 @@ section,
 }
 
 .department-details .department-card .department-lead {
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 1.6;
   color: color-mix(in srgb, var(--default-color) 75%, transparent);
   margin-bottom: 32px;
@@ -3749,7 +3756,7 @@ section,
   gap: 8px;
   height: 40px;
   padding: 0 20px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   border-radius: 6px;
   text-decoration: none;
@@ -3758,7 +3765,7 @@ section,
 
 .department-details .department-card .header-actions .btn-primary i,
 .department-details .department-card .header-actions .btn-ghost i {
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .department-details .department-card .header-actions .btn-primary:focus-visible,
@@ -3795,11 +3802,11 @@ section,
   }
 
   .department-details .department-card .department-title {
-    font-size: 32px;
+    font-size: 2rem;
   }
 
   .department-details .department-card .department-lead {
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   .department-details .department-card .header-actions .btn-primary,
@@ -3828,7 +3835,7 @@ section,
 }
 
 .department-details .stats-strip .stat-cell .stat-label {
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -3836,7 +3843,7 @@ section,
 }
 
 .department-details .stats-strip .stat-cell .stat-value {
-  font-size: 28px;
+  font-size: 1.75rem;
   font-weight: 700;
   letter-spacing: -0.01em;
   color: var(--heading-color);
@@ -3883,7 +3890,7 @@ section,
 }
 
 .department-details .section-block .block-header h2 {
-  font-size: 28px;
+  font-size: 1.75rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--heading-color);
@@ -3892,7 +3899,7 @@ section,
 }
 
 .department-details .section-block .block-header p {
-  font-size: 15px;
+  font-size: 0.9375rem;
   line-height: 1.6;
   color: color-mix(in srgb, var(--default-color) 70%, transparent);
   margin-bottom: 0;
@@ -3905,7 +3912,7 @@ section,
   }
 
   .department-details .section-block .block-header h2 {
-    font-size: 22px;
+    font-size: 1.375rem;
   }
 }
 
@@ -3931,18 +3938,18 @@ section,
 }
 
 .department-details .service-grid .service-card .service-icon i {
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .department-details .service-grid .service-card h3 {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--heading-color);
   margin-bottom: 4px;
 }
 
 .department-details .service-grid .service-card p {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.6;
   color: color-mix(in srgb, var(--default-color) 70%, transparent);
   margin-bottom: 16px;
@@ -3952,14 +3959,14 @@ section,
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 500;
   color: var(--accent-color);
   text-decoration: none;
 }
 
 .department-details .service-grid .service-card .service-link i {
-  font-size: 12px;
+  font-size: 0.75rem;
   transition: transform 0.2s ease;
 }
 
@@ -4001,7 +4008,7 @@ section,
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
+  font-size: 0.875rem;
   border-radius: 6px;
   background: color-mix(in srgb, var(--accent-color) 10%, transparent);
   color: var(--accent-color);
@@ -4010,14 +4017,14 @@ section,
 
 .department-details .feature-list li strong {
   display: block;
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 600;
   color: var(--heading-color);
   margin-bottom: 2px;
 }
 
 .department-details .feature-list li span {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.6;
   color: color-mix(in srgb, var(--default-color) 70%, transparent);
 }
@@ -4043,14 +4050,14 @@ section,
 }
 
 .department-details .sidebar-stack .side-card .side-card-header h3 {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--heading-color);
   margin-bottom: 4px;
 }
 
 .department-details .sidebar-stack .side-card .side-card-header p {
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: color-mix(in srgb, var(--default-color) 65%, transparent);
   margin-bottom: 16px;
 }
@@ -4067,7 +4074,7 @@ section,
 }
 
 .department-details .sidebar-stack .side-card.visual-card .visual-meta p {
-  font-size: 13px;
+  font-size: 0.8125rem;
   line-height: 1.6;
   color: color-mix(in srgb, var(--default-color) 70%, transparent);
   margin: 12px 0 0;
@@ -4085,7 +4092,7 @@ section,
   justify-content: space-between;
   align-items: center;
   padding: 12px 24px;
-  font-size: 14px;
+  font-size: 0.875rem;
   border-top: 1px solid color-mix(in srgb, var(--default-color) 8%, transparent);
 }
 
@@ -4097,7 +4104,7 @@ section,
 .department-details .sidebar-stack .hours-list li span:last-child {
   color: var(--heading-color);
   font-weight: 600;
-  font-size: 13px;
+  font-size: 0.8125rem;
 }
 
 .department-details .sidebar-stack .link-list li {
@@ -4110,7 +4117,7 @@ section,
   justify-content: space-between;
   gap: 12px;
   padding: 14px 24px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   color: var(--heading-color);
   text-decoration: none;
@@ -4118,7 +4125,7 @@ section,
 }
 
 .department-details .sidebar-stack .link-list li a i {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: color-mix(in srgb, var(--default-color) 50%, transparent);
   transition: color 0.2s ease, transform 0.2s ease;
 }
@@ -4162,7 +4169,7 @@ section,
 
 .services .services-toolbar .label {
   display: inline-block;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -4171,7 +4178,7 @@ section,
 }
 
 .services .services-toolbar .toolbar-title {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   margin: 0;
@@ -4189,7 +4196,7 @@ section,
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
   padding: 4px 10px;
   border-radius: 999px;
@@ -4226,7 +4233,7 @@ section,
 }
 
 .services .badge.badge-outline i {
-  font-size: 13px;
+  font-size: 0.8125rem;
 }
 
 @keyframes dotPulse {
@@ -4295,12 +4302,12 @@ section,
 }
 
 .services .card-head .icon-wrap i {
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .services .card-head .pin {
   margin-left: auto;
-  font-size: 11px;
+  font-size: 0.6875rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -4332,7 +4339,7 @@ section,
 }
 
 .services .card-content .card-title {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   margin: 0 0 8px;
@@ -4340,7 +4347,7 @@ section,
 }
 
 .services .card-content .card-description {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.6;
   color: var(--muted);
   margin: 0 0 16px;
@@ -4359,12 +4366,12 @@ section,
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: var(--default-color);
 }
 
 .services .feature-list li i {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--accent-color);
   flex-shrink: 0;
 }
@@ -4386,7 +4393,7 @@ section,
   height: 40px;
   padding: 0 16px;
   border-radius: 6px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   text-decoration: none;
   border: 1px solid transparent;
@@ -4398,7 +4405,7 @@ section,
 .services .btn-secondary i,
 .services .btn-ghost i,
 .services .btn-danger i {
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .services .btn-primary:focus-visible,
@@ -4463,7 +4470,7 @@ section,
 }
 
 .services .services-stats .stat-cell .stat-key {
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -4474,7 +4481,7 @@ section,
   display: inline-flex;
   align-items: baseline;
   gap: 2px;
-  font-size: 36px;
+  font-size: 2.25rem;
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--heading-color);
@@ -4482,12 +4489,12 @@ section,
 }
 
 .services .services-stats .stat-cell .stat-value .stat-suffix {
-  font-size: 24px;
+  font-size: 1.5rem;
   color: var(--accent-color);
 }
 
 .services .services-stats .stat-cell .stat-meta {
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: var(--muted);
 }
 
@@ -4522,7 +4529,7 @@ section,
 }
 
 .services .appointment-banner {
-  background: var(--accent-color);
+  background: color-mix(in srgb, var(--accent-color) 85%, #000);
   border-radius: 8px;
   padding: 48px;
   color: var(--contrast-color);
@@ -4544,7 +4551,7 @@ section,
 }
 
 .services .appointment-banner .banner-meta h3 {
-  font-size: 28px;
+  font-size: 1.75rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   color: var(--contrast-color);
@@ -4553,9 +4560,9 @@ section,
 }
 
 .services .appointment-banner .banner-meta p {
-  font-size: 15px;
+  font-size: 0.9375rem;
   line-height: 1.6;
-  color: color-mix(in srgb, var(--contrast-color) 80%, transparent);
+  color: color-mix(in srgb, var(--contrast-color) 90%, transparent);
   margin: 0;
   max-width: 480px;
 }
@@ -4616,7 +4623,7 @@ section,
   }
 
   .services .appointment-banner .banner-meta h3 {
-    font-size: 24px;
+    font-size: 1.5rem;
   }
 }
 
@@ -4632,7 +4639,7 @@ section,
 .service-details-2 .status-badge {
   display: inline-flex;
   align-items: center;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -4658,7 +4665,7 @@ section,
 }
 
 .service-details-2 .section-intro h3 {
-  font-size: 28px;
+  font-size: 1.75rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   line-height: 1.3;
@@ -4692,7 +4699,7 @@ section,
 }
 
 .service-details-2 .service-overview .overview-card .overview-header h2 {
-  font-size: 36px;
+  font-size: 2.25rem;
   font-weight: 700;
   letter-spacing: -0.01em;
   line-height: 1.2;
@@ -4701,12 +4708,12 @@ section,
 
 @media (max-width: 768px) {
   .service-details-2 .service-overview .overview-card .overview-header h2 {
-    font-size: 28px;
+    font-size: 1.75rem;
   }
 }
 
 .service-details-2 .service-overview .overview-card .overview-header .overview-tagline {
-  font-size: 16px;
+  font-size: 1rem;
   color: color-mix(in srgb, var(--default-color) 70%, transparent);
   line-height: 1.6;
   margin: 0;
@@ -4717,7 +4724,7 @@ section,
 }
 
 .service-details-2 .service-overview .overview-card .overview-body p {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.75;
   color: color-mix(in srgb, var(--default-color) 80%, transparent);
   margin-bottom: 24px;
@@ -4743,13 +4750,13 @@ section,
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--heading-color);
 }
 
 .service-details-2 .service-overview .overview-card .overview-body .feature-grid .feature-item i {
   color: var(--accent-color);
-  font-size: 16px;
+  font-size: 1rem;
   flex-shrink: 0;
 }
 
@@ -4777,7 +4784,7 @@ section,
   color: var(--contrast-color);
   border: 1px solid var(--accent-color);
   border-radius: 6px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   text-decoration: none;
   transition: background 0.2s ease, box-shadow 0.2s ease;
@@ -4807,7 +4814,7 @@ section,
   color: var(--heading-color);
   border: 1px solid color-mix(in srgb, var(--default-color) 25%, transparent);
   border-radius: 6px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   text-decoration: none;
   transition: all 0.2s ease;
@@ -4861,7 +4868,7 @@ section,
 }
 
 .service-details-2 .media-card .media-overlay .overlay-title {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 600;
   color: var(--heading-color);
   letter-spacing: -0.01em;
@@ -4903,19 +4910,19 @@ section,
 }
 
 .service-details-2 .service-modules .module-card .module-header .module-icon i {
-  font-size: 20px;
+  font-size: 1.25rem;
   color: var(--accent-color);
 }
 
 .service-details-2 .service-modules .module-card h4 {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   margin-bottom: 8px;
 }
 
 .service-details-2 .service-modules .module-card p {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.6;
   color: color-mix(in srgb, var(--default-color) 70%, transparent);
   margin: 0;
@@ -4932,7 +4939,7 @@ section,
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   color: var(--accent-color);
   text-decoration: none;
@@ -4940,7 +4947,7 @@ section,
 }
 
 .service-details-2 .service-modules .module-card .module-footer .module-link i {
-  font-size: 14px;
+  font-size: 0.875rem;
   transition: transform 0.2s ease;
 }
 
@@ -4977,7 +4984,7 @@ section,
 }
 
 .service-details-2 .booking-panel .panel-info h3 {
-  font-size: 28px;
+  font-size: 1.75rem;
   font-weight: 700;
   letter-spacing: -0.01em;
   line-height: 1.2;
@@ -4986,12 +4993,12 @@ section,
 
 @media (max-width: 768px) {
   .service-details-2 .booking-panel .panel-info h3 {
-    font-size: 24px;
+    font-size: 1.5rem;
   }
 }
 
 .service-details-2 .booking-panel .panel-info p {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.75;
   color: color-mix(in srgb, var(--default-color) 70%, transparent);
   margin-bottom: 32px;
@@ -5028,7 +5035,7 @@ section,
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .service-details-2 .booking-panel .panel-info .info-grid .info-tile div {
@@ -5038,13 +5045,13 @@ section,
 }
 
 .service-details-2 .booking-panel .panel-info .info-grid .info-tile div strong {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   color: var(--heading-color);
 }
 
 .service-details-2 .booking-panel .panel-info .info-grid .info-tile div span {
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: color-mix(in srgb, var(--default-color) 65%, transparent);
 }
 
@@ -5077,14 +5084,14 @@ section,
 }
 
 .service-details-2 .booking-panel .panel-action h4 {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   margin-bottom: 8px;
 }
 
 .service-details-2 .booking-panel .panel-action p {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: color-mix(in srgb, var(--default-color) 65%, transparent);
   margin-bottom: 24px;
 }
@@ -5110,7 +5117,7 @@ section,
   display: inline-block;
   padding: 0 12px;
   background: color-mix(in srgb, var(--default-color) 3%, transparent);
-  font-size: 12px;
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: color-mix(in srgb, var(--default-color) 50%, transparent);
@@ -5124,12 +5131,12 @@ section,
 }
 
 .service-details-2 .booking-panel .panel-action .action-call span {
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: color-mix(in srgb, var(--default-color) 60%, transparent);
 }
 
 .service-details-2 .booking-panel .panel-action .action-call a {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--accent-color);
   text-decoration: none;
@@ -5181,7 +5188,7 @@ section,
   height: 40px;
   padding: 0 20px;
   border-radius: var(--sh-radius-sm);
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   line-height: 1;
   border: 1px solid transparent;
@@ -5191,7 +5198,7 @@ section,
 }
 
 .doctors .sh-btn i {
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .doctors .sh-btn.primary {
@@ -5228,14 +5235,14 @@ section,
 .doctors .sh-btn.sm {
   height: 32px;
   padding: 0 12px;
-  font-size: 13px;
+  font-size: 0.8125rem;
 }
 
 .doctors .sh-badge {
   display: inline-flex;
   align-items: center;
   padding: 3px 10px;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
   border-radius: 12px;
   background: var(--sh-soft-bg);
@@ -5251,7 +5258,7 @@ section,
 }
 
 .doctors .sh-badge.small {
-  font-size: 11px;
+  font-size: 0.6875rem;
   padding: 2px 8px;
 }
 
@@ -5270,7 +5277,7 @@ section,
 }
 
 .doctors .label-text {
-  font-size: 12px;
+  font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-weight: 600;
@@ -5319,13 +5326,13 @@ section,
   border: 1px solid var(--sh-border);
   padding: 6px 12px;
   border-radius: 999px;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
   color: var(--heading-color);
 }
 
 .doctors .featured-card .featured-media .status-pill i {
-  font-size: 8px;
+  font-size: 0.5rem;
   color: var(--accent-color);
 }
 
@@ -5340,7 +5347,7 @@ section,
 }
 
 .doctors .featured-card .featured-body .featured-name {
-  font-size: 28px;
+  font-size: 1.75rem;
   font-weight: 700;
   letter-spacing: -0.01em;
   margin: 0 0 4px;
@@ -5348,13 +5355,13 @@ section,
 }
 
 .doctors .featured-card .featured-body .featured-credentials {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--sh-muted);
   margin-bottom: 16px;
 }
 
 .doctors .featured-card .featured-body .featured-bio {
-  font-size: 15px;
+  font-size: 0.9375rem;
   line-height: 1.7;
   color: var(--default-color);
   margin-bottom: 20px;
@@ -5374,12 +5381,12 @@ section,
   align-items: center;
   gap: 12px;
   padding: 6px 0;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .doctors .featured-card .featured-body .featured-highlights li i {
   color: var(--accent-color);
-  font-size: 16px;
+  font-size: 1rem;
   width: 20px;
 }
 
@@ -5398,14 +5405,14 @@ section,
 }
 
 .doctors .doctor-directory .directory-header .directory-title {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   margin-bottom: 4px;
 }
 
 .doctors .doctor-directory .directory-header .directory-subtitle {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--sh-muted);
   margin: 0;
 }
@@ -5421,7 +5428,7 @@ section,
 
 .doctors .doctor-directory .sh-input-group .sh-label {
   display: block;
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 500;
   color: var(--heading-color);
   margin-bottom: 8px;
@@ -5437,7 +5444,7 @@ section,
   top: 50%;
   transform: translateY(-50%);
   color: var(--sh-muted);
-  font-size: 14px;
+  font-size: 0.875rem;
   pointer-events: none;
 }
 
@@ -5452,7 +5459,7 @@ section,
   border: 1px solid var(--sh-border-strong);
   border-radius: var(--sh-radius-sm);
   background: var(--background-color);
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--heading-color);
   transition: all 0.2s ease;
 }
@@ -5491,7 +5498,7 @@ section,
   border: 1px solid var(--sh-border);
   background: var(--background-color);
   color: var(--default-color);
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 500;
   transition: all 0.2s ease;
 }
@@ -5547,7 +5554,7 @@ section,
 }
 
 .doctors .sh-doctor-card .card-top .card-headline .name {
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 600;
   margin: 0 0 2px;
   letter-spacing: -0.01em;
@@ -5555,7 +5562,7 @@ section,
 }
 
 .doctors .sh-doctor-card .card-top .card-headline .role {
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: var(--sh-muted);
   margin: 0;
 }
@@ -5565,7 +5572,7 @@ section,
 }
 
 .doctors .sh-doctor-card .card-desc {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.6;
   color: var(--default-color);
   margin-bottom: 16px;
@@ -5584,12 +5591,12 @@ section,
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 12px;
+  font-size: 0.75rem;
   color: var(--sh-muted);
 }
 
 .doctors .sh-doctor-card .card-meta .meta-item i {
-  font-size: 13px;
+  font-size: 0.8125rem;
 }
 
 .doctors .sh-doctor-card .card-footer {
@@ -5623,13 +5630,13 @@ section,
 }
 
 .doctors .compact-roster .roster-header .roster-title {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 600;
   margin: 0;
 }
 
 .doctors .compact-roster .roster-header .roster-hint {
-  font-size: 12px;
+  font-size: 0.75rem;
   color: var(--sh-muted);
 }
 
@@ -5684,7 +5691,7 @@ section,
 }
 
 .doctors .compact-roster .roster-item .roster-name {
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 600;
   color: var(--heading-color);
   white-space: nowrap;
@@ -5693,7 +5700,7 @@ section,
 }
 
 .doctors .compact-roster .roster-item .roster-role {
-  font-size: 11px;
+  font-size: 0.6875rem;
   color: var(--sh-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -5731,14 +5738,14 @@ section,
 }
 
 .doctors .profile-tabs .tabs-side .tabs-side-body .tabs-name {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   margin: 6px 0 4px;
 }
 
 .doctors .profile-tabs .tabs-side .tabs-side-body .tabs-role {
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: var(--sh-muted);
   margin-bottom: 16px;
 }
@@ -5759,14 +5766,14 @@ section,
 }
 
 .doctors .profile-tabs .tabs-side .tabs-side-body .tabs-stats div strong {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 700;
   color: var(--heading-color);
   line-height: 1.2;
 }
 
 .doctors .profile-tabs .tabs-side .tabs-side-body .tabs-stats div span {
-  font-size: 11px;
+  font-size: 0.6875rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--sh-muted);
@@ -5800,7 +5807,7 @@ section,
   border: none;
   border-radius: 4px;
   padding: 6px 14px;
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 500;
   transition: all 0.2s ease;
 }
@@ -5816,7 +5823,7 @@ section,
 }
 
 .doctors .profile-tabs .tab-content {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.7;
 }
 
@@ -5837,12 +5844,12 @@ section,
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .doctors .profile-tabs .tab-content .check-list li i {
   color: var(--accent-color);
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .doctors .profile-tabs .schedule-grid {
@@ -5868,13 +5875,13 @@ section,
 }
 
 .doctors .profile-tabs .schedule-grid .slot strong {
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: var(--heading-color);
   font-weight: 600;
 }
 
 .doctors .profile-tabs .schedule-grid .slot span {
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: var(--default-color);
 }
 
@@ -5909,17 +5916,17 @@ section,
 
 .doctors .profile-tabs .review-card .stars i {
   color: var(--accent-color);
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .doctors .profile-tabs .review-card .review-meta {
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: var(--sh-muted);
 }
 
 .doctors .profile-tabs .review-card p {
   margin: 0;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.7;
 }
 
@@ -5965,7 +5972,7 @@ section,
   display: inline-flex;
   align-items: center;
   padding: 2px 10px;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -5987,18 +5994,18 @@ section,
 }
 
 .appointmnet .process-stepper .step-card .step-icon i {
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .appointmnet .process-stepper .step-card h5 {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   margin-bottom: 8px;
 }
 
 .appointmnet .process-stepper .step-card p {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.6;
   color: color-mix(in srgb, var(--default-color) 70%, transparent);
   margin-bottom: 0;
@@ -6047,7 +6054,7 @@ section,
 }
 
 .appointmnet .form-card .form-card-header h3 {
-  font-size: 28px;
+  font-size: 1.75rem;
   font-weight: 700;
   letter-spacing: -0.01em;
   margin: 8px 0;
@@ -6055,7 +6062,7 @@ section,
 }
 
 .appointmnet .form-card .form-card-header .form-card-desc {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.6;
   color: color-mix(in srgb, var(--default-color) 65%, transparent);
   margin-bottom: 0;
@@ -6065,7 +6072,7 @@ section,
   display: inline-flex;
   align-items: center;
   padding: 2px 10px;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -6083,14 +6090,14 @@ section,
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   color: var(--heading-color);
   margin-bottom: 8px;
 }
 
 .appointmnet .appointment-form .input-group label .label-meta {
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 400;
   text-transform: none;
   letter-spacing: 0;
@@ -6099,7 +6106,7 @@ section,
 
 .appointmnet .appointment-form .input-group .input-help {
   display: block;
-  font-size: 12px;
+  font-size: 0.75rem;
   color: color-mix(in srgb, var(--default-color) 60%, transparent);
   margin-top: 4px;
 }
@@ -6113,7 +6120,7 @@ section,
   background-color: var(--surface-color);
   border: 1px solid color-mix(in srgb, var(--default-color) 20%, transparent);
   border-radius: 6px;
-  font-size: 14px;
+  font-size: 0.875rem;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -6156,7 +6163,7 @@ section,
   color: var(--contrast-color);
   border: 1px solid var(--accent-color);
   border-radius: 6px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
@@ -6172,7 +6179,7 @@ section,
 }
 
 .appointmnet .appointment-form .btn-primary-action i {
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .appointmnet .appointment-form .btn-ghost-action {
@@ -6185,7 +6192,7 @@ section,
   color: var(--default-color);
   border: 1px solid color-mix(in srgb, var(--default-color) 20%, transparent);
   border-radius: 6px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   transition: background-color 0.2s ease, border-color 0.2s ease;
 }
@@ -6218,7 +6225,7 @@ section,
 }
 
 .appointmnet .info-stack .info-panel h4 {
-  font-size: 22px;
+  font-size: 1.375rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   margin: 12px 0 8px 0;
@@ -6226,7 +6233,7 @@ section,
 }
 
 .appointmnet .info-stack .info-panel p {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.6;
   color: color-mix(in srgb, var(--default-color) 70%, transparent);
   margin-bottom: 0;
@@ -6267,18 +6274,18 @@ section,
 }
 
 .appointmnet .feature-list .feature-row .feature-icon i {
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .appointmnet .feature-list .feature-row .feature-body h6 {
-  font-size: 15px;
+  font-size: 0.9375rem;
   font-weight: 600;
   margin-bottom: 4px;
   letter-spacing: -0.01em;
 }
 
 .appointmnet .feature-list .feature-row .feature-body p {
-  font-size: 13px;
+  font-size: 0.8125rem;
   line-height: 1.6;
   color: color-mix(in srgb, var(--default-color) 65%, transparent);
   margin-bottom: 0;
@@ -6310,11 +6317,11 @@ section,
 }
 
 .appointmnet .emergency-panel .emergency-icon i {
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .appointmnet .emergency-panel .emergency-tag {
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -6326,14 +6333,14 @@ section,
 }
 
 .appointmnet .emergency-panel h6 {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   margin-bottom: 8px;
   letter-spacing: -0.01em;
 }
 
 .appointmnet .emergency-panel p {
-  font-size: 13px;
+  font-size: 0.8125rem;
   line-height: 1.6;
   color: color-mix(in srgb, var(--default-color) 70%, transparent);
   margin-bottom: 16px;
@@ -6343,7 +6350,7 @@ section,
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 700;
   letter-spacing: -0.01em;
   color: var(--accent-color);
@@ -6367,7 +6374,7 @@ section,
   }
 
   .appointmnet .form-card .form-card-header h3 {
-    font-size: 24px;
+    font-size: 1.5rem;
   }
 
   .appointmnet .appointment-form .form-actions {
@@ -6396,7 +6403,7 @@ section,
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   color: var(--heading-color);
   margin-bottom: 8px;
@@ -6409,7 +6416,7 @@ section,
 }
 
 .appointmnet .appointment-form .form-check-label {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--default-color);
 }
 
@@ -6455,7 +6462,7 @@ section,
   display: inline-flex;
   align-items: center;
   padding: 2px 10px;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -6468,7 +6475,7 @@ section,
 .testimonials .review-rating {
   display: inline-flex;
   gap: 2px;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .testimonials .review-rating i {
@@ -6481,7 +6488,7 @@ section,
 }
 
 .testimonials .review-text {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.6;
   color: color-mix(in srgb, var(--default-color) 85%, transparent);
   margin: 0;
@@ -6511,7 +6518,7 @@ section,
 }
 
 .testimonials .review-name {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   margin: 0;
   color: var(--heading-color);
@@ -6519,7 +6526,7 @@ section,
 }
 
 .testimonials .review-role {
-  font-size: 12px;
+  font-size: 0.75rem;
   color: color-mix(in srgb, var(--default-color) 60%, transparent);
   margin-top: 2px;
 }
@@ -6547,7 +6554,7 @@ section,
 }
 
 .gallery .filter-bar .filter-label {
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -6584,7 +6591,7 @@ section,
   border-radius: 6px;
   cursor: pointer;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 0.875rem;
   transition: all 0.2s ease;
 }
 
@@ -6595,7 +6602,7 @@ section,
   min-width: 22px;
   height: 20px;
   padding: 0 6px;
-  font-size: 11px;
+  font-size: 0.6875rem;
   font-weight: 600;
   border-radius: 10px;
   background: color-mix(in srgb, var(--default-color) 8%, transparent);
@@ -6673,7 +6680,7 @@ section,
   display: inline-flex;
   align-items: center;
   padding: 2px 10px;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
   line-height: 1.4;
   border-radius: 12px;
@@ -6695,7 +6702,7 @@ section,
 }
 
 .gallery .card-head .card-title {
-  font-size: 18px;
+  font-size: 1.125rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   line-height: 1.3;
@@ -6704,7 +6711,7 @@ section,
 }
 
 .gallery .card-head .card-desc {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.6;
   color: color-mix(in srgb, var(--default-color) 70%, transparent);
   margin: 0;
@@ -6726,7 +6733,7 @@ section,
   gap: 6px;
   height: 36px;
   padding: 0 12px;
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 500;
   color: var(--heading-color);
   background: transparent;
@@ -6736,7 +6743,7 @@ section,
 }
 
 .gallery .btn-ghost i {
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .gallery .btn-ghost:hover {
@@ -6754,7 +6761,7 @@ section,
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 500;
   color: var(--accent-color);
   padding: 8px 4px;
@@ -6763,7 +6770,7 @@ section,
 }
 
 .gallery .btn-link i {
-  font-size: 14px;
+  font-size: 0.875rem;
   transition: transform 0.2s ease;
 }
 
@@ -6795,7 +6802,7 @@ section,
   }
 
   .gallery .card-head .card-title {
-    font-size: 16px;
+    font-size: 1rem;
   }
 }
 
@@ -6817,7 +6824,7 @@ section,
   display: inline-flex;
   align-items: center;
   padding: 4px 12px;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -6829,7 +6836,7 @@ section,
 }
 
 .faq .faq-sidebar .sidebar-title {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: -0.01em;
   line-height: 1.3;
@@ -6837,7 +6844,7 @@ section,
 }
 
 .faq .faq-sidebar .sidebar-desc {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.6;
   color: color-mix(in srgb, var(--default-color) 75%, transparent);
   margin-bottom: 24px;
@@ -6859,13 +6866,13 @@ section,
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 14px;
+  font-size: 0.875rem;
   color: color-mix(in srgb, var(--default-color) 80%, transparent);
   padding: 8px 0;
 }
 
 .faq .faq-sidebar .sidebar-meta li i {
-  font-size: 16px;
+  font-size: 1rem;
   color: var(--accent-color);
   width: 20px;
   flex-shrink: 0;
@@ -6879,7 +6886,7 @@ section,
   width: 100%;
   height: 40px;
   padding: 0 16px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   color: var(--contrast-color);
   background: var(--accent-color);
@@ -6889,7 +6896,7 @@ section,
 }
 
 .faq .faq-sidebar .sidebar-cta i {
-  font-size: 14px;
+  font-size: 0.875rem;
   transition: transform 0.2s ease;
 }
 
@@ -6944,7 +6951,7 @@ section,
 }
 
 .faq .faq-container .faq-item .faq-meta .faq-index {
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.05em;
   color: color-mix(in srgb, var(--default-color) 55%, transparent);
@@ -6954,7 +6961,7 @@ section,
   display: inline-flex;
   align-items: center;
   padding: 2px 10px;
-  font-size: 11px;
+  font-size: 0.6875rem;
   font-weight: 500;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -6966,7 +6973,7 @@ section,
 
 .faq .faq-container .faq-item h3 {
   font-weight: 600;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.5;
   letter-spacing: -0.01em;
   margin: 0;
@@ -6985,7 +6992,7 @@ section,
 .faq .faq-container .faq-item .faq-content p {
   margin-bottom: 0;
   overflow: hidden;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.7;
   color: color-mix(in srgb, var(--default-color) 75%, transparent);
 }
@@ -6999,7 +7006,7 @@ section,
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1;
   border-radius: 6px;
   background: color-mix(in srgb, var(--default-color) 6%, transparent);
@@ -7069,7 +7076,7 @@ section,
   display: inline-flex;
   align-items: center;
   padding: 4px 12px;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -7096,7 +7103,7 @@ section,
 }
 
 .contact .contact-panel .panel-header .panel-title {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   line-height: 1.3;
@@ -7105,7 +7112,7 @@ section,
 }
 
 .contact .contact-panel .panel-header .panel-description {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.6;
   color: color-mix(in srgb, var(--default-color) 70%, transparent);
   margin-bottom: 0;
@@ -7140,12 +7147,12 @@ section,
   border-radius: 8px;
   background: color-mix(in srgb, var(--accent-color) 10%, transparent);
   color: var(--accent-color);
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 
 .contact .contact-panel .contact-list .contact-list-item .item-content .item-label {
   display: block;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -7154,7 +7161,7 @@ section,
 }
 
 .contact .contact-panel .contact-list .contact-list-item .item-content .item-value {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.6;
   color: var(--heading-color);
   margin-bottom: 0;
@@ -7167,7 +7174,7 @@ section,
 
 .contact .contact-panel .panel-footer .footer-label {
   display: block;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -7191,7 +7198,7 @@ section,
   background: transparent;
   border: 1px solid color-mix(in srgb, var(--default-color) 15%, transparent);
   color: color-mix(in srgb, var(--default-color) 70%, transparent);
-  font-size: 14px;
+  font-size: 0.875rem;
   transition: all 0.2s ease;
 }
 
@@ -7228,7 +7235,7 @@ section,
 }
 
 .contact .form-card .card-header .card-title {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: -0.01em;
   margin-bottom: 4px;
@@ -7236,7 +7243,7 @@ section,
 }
 
 .contact .form-card .card-header .card-description {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.6;
   color: color-mix(in srgb, var(--default-color) 70%, transparent);
   margin-bottom: 0;
@@ -7248,7 +7255,7 @@ section,
 
 .contact .php-email-form .input-group label {
   display: block;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   color: var(--heading-color);
   margin-bottom: 8px;
@@ -7256,7 +7263,7 @@ section,
 
 .contact .php-email-form .input-group .input-description {
   display: block;
-  font-size: 12px;
+  font-size: 0.75rem;
   color: color-mix(in srgb, var(--default-color) 60%, transparent);
   margin-top: 4px;
 }
@@ -7269,7 +7276,7 @@ section,
   background-color: var(--background-color);
   border: 1px solid color-mix(in srgb, var(--default-color) 25%, transparent);
   border-radius: 6px;
-  font-size: 14px;
+  font-size: 0.875rem;
   transition: all 0.2s ease;
   box-shadow: none;
 }
@@ -7302,13 +7309,13 @@ section,
   height: 40px;
   border-radius: 6px;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 0.875rem;
   transition: all 0.2s ease;
   margin-top: 8px;
 }
 
 .contact .php-email-form .submit-btn i {
-  font-size: 14px;
+  font-size: 0.875rem;
   transition: transform 0.2s ease;
 }
 
@@ -7332,7 +7339,7 @@ section,
   text-align: center;
   padding: 12px 16px;
   margin-bottom: 16px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   border-radius: 6px;
 }
@@ -7421,7 +7428,7 @@ section,
 
   .contact .contact-panel .panel-title,
   .contact .form-card .card-title {
-    font-size: 20px;
+    font-size: 1.25rem;
   }
 }
 
@@ -7800,7 +7807,7 @@ section,
   background-color: color-mix(in srgb, var(--accent-color) 10%, transparent);
   color: var(--accent-color);
   border: 1px solid color-mix(in srgb, var(--accent-color) 30%, transparent);
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.05em;
 }
@@ -7814,7 +7821,7 @@ section,
 }
 
 .error-404 .card-header-block .meta-label {
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -7843,13 +7850,13 @@ section,
 }
 
 .error-404 .error-visual .visual-frame i {
-  font-size: 36px;
+  font-size: 2.25rem;
   color: var(--accent-color);
 }
 
 .error-404 .error-visual .error-numeric {
   font-family: var(--heading-font);
-  font-size: 48px;
+  font-size: 3rem;
   font-weight: 700;
   color: var(--heading-color);
   letter-spacing: -0.02em;
@@ -7857,7 +7864,7 @@ section,
 }
 
 .error-404 .error-info .error-headline {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 600;
   color: var(--heading-color);
   letter-spacing: -0.01em;
@@ -7866,7 +7873,7 @@ section,
 }
 
 .error-404 .error-info .error-description {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.6;
   color: color-mix(in srgb, var(--default-color) 75%, transparent);
   margin-bottom: 0;
@@ -7883,7 +7890,7 @@ section,
 
 .error-404 .card-form-block .form-label-text {
   display: block;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   color: var(--heading-color);
   margin-bottom: 8px;
@@ -7904,7 +7911,7 @@ section,
   left: 12px;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 14px;
+  font-size: 0.875rem;
   color: color-mix(in srgb, var(--default-color) 50%, transparent);
   pointer-events: none;
 }
@@ -7913,7 +7920,7 @@ section,
   width: 100%;
   height: 40px;
   padding: 8px 12px 8px 36px;
-  font-size: 14px;
+  font-size: 0.875rem;
   color: var(--default-color);
   background-color: var(--surface-color);
   border: 1px solid color-mix(in srgb, var(--default-color) 25%, transparent);
@@ -7933,7 +7940,7 @@ section,
 .error-404 .card-form-block .btn-search {
   height: 40px;
   padding: 0 20px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   background-color: var(--accent-color);
   color: var(--contrast-color);
@@ -7953,7 +7960,7 @@ section,
 }
 
 .error-404 .card-form-block .input-helper-text {
-  font-size: 12px;
+  font-size: 0.75rem;
   color: color-mix(in srgb, var(--default-color) 60%, transparent);
   margin-top: 8px;
   margin-bottom: 0;
@@ -7970,7 +7977,7 @@ section,
 }
 
 .error-404 .card-footer-block .footer-label {
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -7988,7 +7995,7 @@ section,
   gap: 8px;
   height: 40px;
   padding: 0 16px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   color: var(--heading-color);
   background-color: transparent;
@@ -8013,7 +8020,7 @@ section,
   gap: 8px;
   height: 40px;
   padding: 0 20px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   color: var(--contrast-color);
   background-color: var(--accent-color);
@@ -8038,7 +8045,7 @@ section,
 
 .error-404 .helpful-links .helpful-label {
   display: block;
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -8061,13 +8068,13 @@ section,
   background-color: var(--surface-color);
   border: 1px solid color-mix(in srgb, var(--default-color) 12%, transparent);
   color: var(--heading-color);
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
 }
 
 .error-404 .helpful-links .helpful-link>i:first-child {
-  font-size: 18px;
+  font-size: 1.125rem;
   color: var(--accent-color);
 }
 
@@ -8076,7 +8083,7 @@ section,
 }
 
 .error-404 .helpful-links .helpful-link .link-arrow {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: color-mix(in srgb, var(--default-color) 50%, transparent);
   transition: transform 0.2s ease, color 0.2s ease;
 }
@@ -8118,7 +8125,7 @@ section,
   }
 
   .error-404 .error-info .error-headline {
-    font-size: 20px;
+    font-size: 1.25rem;
   }
 
   .error-404 .card-form-block {
