@@ -266,6 +266,8 @@ h6 {
     color: var(--nav-color);
     padding: 18px 15px;
     font-size: 0.875rem;
+    /* Whole-pixel line height keeps the links and the dropdown on whole pixels, so the dropdown text doesn't jump a pixel when its fade-in ends */
+    line-height: 24px;
     font-family: var(--nav-font);
     font-weight: 500;
     display: flex;
@@ -573,6 +575,21 @@ h6 {
 
 .footer .footer-contact p {
   margin-bottom: 5px;
+}
+
+.footer .footer-contact a {
+  color: var(--default-color);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer .footer-contact a:hover {
+  color: color-mix(in srgb, var(--accent-color), white 55%);
+}
+
+.footer .footer-locations {
+  padding: 30px 0;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
 }
 
 .footer .copyright {
@@ -4550,7 +4567,7 @@ section,
   }
 }
 
-.services .appointment-banner .banner-meta h3 {
+.services .appointment-banner .banner-meta h2 {
   font-size: 1.75rem;
   font-weight: 600;
   letter-spacing: -0.01em;
@@ -4622,7 +4639,7 @@ section,
     padding: 32px 24px;
   }
 
-  .services .appointment-banner .banner-meta h3 {
+  .services .appointment-banner .banner-meta h2 {
     font-size: 1.5rem;
   }
 }
@@ -5997,7 +6014,7 @@ section,
   font-size: 1.125rem;
 }
 
-.appointmnet .process-stepper .step-card h5 {
+.appointmnet .process-stepper .step-card h3 {
   font-size: 1.25rem;
   font-weight: 600;
   letter-spacing: -0.01em;
@@ -6053,7 +6070,7 @@ section,
   border-bottom: 1px solid color-mix(in srgb, var(--default-color) 10%, transparent);
 }
 
-.appointmnet .form-card .form-card-header h3 {
+.appointmnet .form-card .form-card-header h2 {
   font-size: 1.75rem;
   font-weight: 700;
   letter-spacing: -0.01em;
@@ -6224,7 +6241,7 @@ section,
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
-.appointmnet .info-stack .info-panel h4 {
+.appointmnet .info-stack .info-panel h2 {
   font-size: 1.375rem;
   font-weight: 600;
   letter-spacing: -0.01em;
@@ -6277,7 +6294,7 @@ section,
   font-size: 1.125rem;
 }
 
-.appointmnet .feature-list .feature-row .feature-body h6 {
+.appointmnet .feature-list .feature-row .feature-body h3 {
   font-size: 0.9375rem;
   font-weight: 600;
   margin-bottom: 4px;
@@ -6332,7 +6349,7 @@ section,
   border: 1px solid color-mix(in srgb, var(--accent-color) 30%, transparent);
 }
 
-.appointmnet .emergency-panel h6 {
+.appointmnet .emergency-panel h3 {
   font-size: 1rem;
   font-weight: 600;
   margin-bottom: 8px;
@@ -6349,13 +6366,14 @@ section,
 .appointmnet .emergency-panel .emergency-phone {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
-  font-size: 1.125rem;
-  font-weight: 700;
-  letter-spacing: -0.01em;
+  height: 40px;
+  font-size: 0.875rem;
+  font-weight: 500;
   color: var(--accent-color);
   text-decoration: none;
-  padding: 8px 14px;
+  padding: 0 24px;
   border-radius: 6px;
   border: 1px solid color-mix(in srgb, var(--accent-color) 30%, transparent);
   background-color: var(--surface-color);
@@ -6373,7 +6391,7 @@ section,
     padding: 24px;
   }
 
-  .appointmnet .form-card .form-card-header h3 {
+  .appointmnet .form-card .form-card-header h2 {
     font-size: 1.5rem;
   }
 
@@ -7167,6 +7185,23 @@ section,
   margin-bottom: 0;
 }
 
+.contact .contact-panel .contact-list .contact-list-item .item-content .item-phone {
+  margin-top: 6px;
+}
+
+.contact .contact-panel .contact-list .contact-list-item .item-content .item-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 6px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+.contact .contact-panel .contact-list .contact-list-item .item-content .item-link i {
+  font-size: 0.75rem;
+}
+
 .contact .contact-panel .panel-footer {
   padding-top: 16px;
   border-top: 1px solid color-mix(in srgb, var(--default-color) 10%, transparent);
@@ -7249,11 +7284,11 @@ section,
   margin-bottom: 0;
 }
 
-.contact .php-email-form .input-group {
+.contact .contact-form .input-group {
   display: block;
 }
 
-.contact .php-email-form .input-group label {
+.contact .contact-form .input-group label {
   display: block;
   font-size: 0.875rem;
   font-weight: 500;
@@ -7261,14 +7296,14 @@ section,
   margin-bottom: 8px;
 }
 
-.contact .php-email-form .input-group .input-description {
+.contact .contact-form .input-group .input-description {
   display: block;
   font-size: 0.75rem;
   color: color-mix(in srgb, var(--default-color) 60%, transparent);
   margin-top: 4px;
 }
 
-.contact .php-email-form .form-control {
+.contact .contact-form .form-control {
   width: 100%;
   padding: 8px 12px;
   height: 40px;
@@ -7281,24 +7316,24 @@ section,
   box-shadow: none;
 }
 
-.contact .php-email-form .form-control:focus {
+.contact .contact-form .form-control:focus {
   outline: none;
   border-color: var(--accent-color);
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color) 15%, transparent);
 }
 
-.contact .php-email-form .form-control::placeholder {
+.contact .contact-form .form-control::placeholder {
   color: color-mix(in srgb, var(--default-color) 50%, transparent);
 }
 
-.contact .php-email-form textarea.form-control {
+.contact .contact-form textarea.form-control {
   height: auto;
   min-height: 120px;
   padding: 12px;
   resize: vertical;
 }
 
-.contact .php-email-form .submit-btn {
+.contact .contact-form .submit-btn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -7314,27 +7349,27 @@ section,
   margin-top: 8px;
 }
 
-.contact .php-email-form .submit-btn i {
+.contact .contact-form .submit-btn i {
   font-size: 0.875rem;
   transition: transform 0.2s ease;
 }
 
-.contact .php-email-form .submit-btn:hover {
+.contact .contact-form .submit-btn:hover {
   background: color-mix(in srgb, var(--accent-color) 85%, transparent);
 }
 
-.contact .php-email-form .submit-btn:hover i {
+.contact .contact-form .submit-btn:hover i {
   transform: translateX(3px);
 }
 
-.contact .php-email-form .submit-btn:focus {
+.contact .contact-form .submit-btn:focus {
   outline: none;
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-color) 25%, transparent);
 }
 
-.contact .php-email-form .loading,
-.contact .php-email-form .error-message,
-.contact .php-email-form .sent-message {
+.contact .contact-form .loading,
+.contact .contact-form .error-message,
+.contact .contact-form .sent-message {
   display: none;
   text-align: center;
   padding: 12px 16px;
@@ -7344,13 +7379,13 @@ section,
   border-radius: 6px;
 }
 
-.contact .php-email-form .loading {
+.contact .contact-form .loading {
   background: color-mix(in srgb, var(--default-color) 5%, transparent);
   color: var(--accent-color);
   border: 1px solid color-mix(in srgb, var(--default-color) 10%, transparent);
 }
 
-.contact .php-email-form .loading:before {
+.contact .contact-form .loading:before {
   content: "";
   display: inline-block;
   border-radius: 50%;
@@ -7362,13 +7397,13 @@ section,
   animation: animate-loading 1s linear infinite;
 }
 
-.contact .php-email-form .error-message {
+.contact .contact-form .error-message {
   background: color-mix(in srgb, #ed3c0d 10%, transparent);
   color: #ed3c0d;
   border: 1px solid color-mix(in srgb, #ed3c0d 30%, transparent);
 }
 
-.contact .php-email-form .sent-message {
+.contact .contact-form .sent-message {
   background: color-mix(in srgb, #18d26e 10%, transparent);
   color: #18d26e;
   border: 1px solid color-mix(in srgb, #18d26e 30%, transparent);
@@ -7387,17 +7422,58 @@ section,
 .contact .map-card {
   position: relative;
   width: 100%;
-  height: 280px;
   border-radius: 8px;
   overflow: hidden;
+  background: var(--surface-color);
   border: 1px solid color-mix(in srgb, var(--default-color) 12%, transparent);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   transition: all 0.2s ease;
 }
 
+.contact .map-card .map-tabs-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  padding: 12px;
+  border-bottom: 1px solid color-mix(in srgb, var(--default-color) 10%, transparent);
+}
+
+.contact .map-card .map-tabs-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+.contact .map-card .map-tabs {
+  gap: 8px;
+}
+
+.contact .map-card .map-tabs .nav-link {
+  padding: 6px 14px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.4;
+  border-radius: 6px;
+  border: 1px solid color-mix(in srgb, var(--default-color) 15%, transparent);
+  color: var(--heading-color);
+  transition: all 0.2s ease;
+}
+
+.contact .map-card .map-tabs .nav-link:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.contact .map-card .map-tabs .nav-link.active {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--contrast-color);
+}
+
 .contact .map-card iframe {
   width: 100%;
-  height: 100%;
+  height: 280px;
   border: 0;
   display: block;
 }
@@ -7414,7 +7490,7 @@ section,
     padding: 24px;
   }
 
-  .contact .map-card {
+  .contact .map-card iframe {
     height: 240px;
   }
 }
@@ -7429,6 +7505,150 @@ section,
   .contact .contact-panel .panel-title,
   .contact .form-card .card-title {
     font-size: 1.25rem;
+  }
+}
+
+/*--------------------------------------------------------------
+# Locations Section
+--------------------------------------------------------------*/
+.locations .location-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color) 12%, transparent);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  scroll-margin-top: 110px;
+}
+.locations .location-map iframe {
+  width: 100%;
+  height: 220px;
+  border: 0;
+  display: block;
+}
+.locations .location-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.locations .location-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: color-mix(in srgb, var(--default-color) 80%, transparent);
+  margin-bottom: 6px;
+}
+.locations .location-name {
+  font-size: 1.375rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 16px;
+}
+.locations .location-details {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  flex-grow: 1;
+}
+.locations .location-details li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 8px 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--heading-color);
+}
+.locations .location-details li i {
+  color: var(--accent-color);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.locations .location-actions,
+.locations .service-area-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.locations .btn-directions,
+.locations .btn-request {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+.locations .btn-directions {
+  border: 1px solid color-mix(in srgb, var(--default-color) 20%, transparent);
+  color: var(--heading-color);
+}
+.locations .btn-directions:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+.locations .btn-request {
+  background: var(--accent-color);
+  border: 1px solid var(--accent-color);
+  color: var(--contrast-color);
+}
+.locations .btn-request:hover {
+  background: color-mix(in srgb, var(--accent-color) 85%, transparent);
+}
+.locations .service-area {
+  margin-top: 32px;
+  padding: 32px;
+  background: var(--surface-color);
+  border: 1px solid color-mix(in srgb, var(--default-color) 12%, transparent);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+.locations .service-area h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 12px;
+}
+.locations .service-area p {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.locations .county-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.locations .county-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--heading-color);
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--accent-color) 6%, transparent);
+}
+.locations .county-list li i {
+  color: var(--accent-color);
+}
+@media (max-width: 576px) {
+  .locations .service-area {
+    padding: 20px;
+  }
+  .locations .county-list {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
